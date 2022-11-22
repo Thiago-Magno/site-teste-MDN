@@ -1,3 +1,4 @@
+//troca a imagem quando clicado
 let minhaImagem = document.querySelector('img')
 minhaImagem.onclick = function () {
 
@@ -11,39 +12,24 @@ minhaImagem.onclick = function () {
 
     
 }
-/* let sorvete = 'chocolate';
- if (sorvete == 'chocolate') {
-     alert('Opa, eu amo sorvete de chocolate');
- }
- else{
-     alert('Ah, eu prefiria o de chocolate...');
- }
-*/
 
-/*function multiplica(num1,num2) {
-    let resultado = num1 * num2;
-    return resultado;
-}*/
-// faz com que se o usuario clique no site ele fale para
-// parar de cutuca-lo
-/*document.querySelector('html').onclick = function() {
-    alert('Ai! Pare de me cutucar!');
-}*/
-
+//define o nome de usuario e troca o cabeçalho
 let meuBotao = document.querySelector('button');
 let meuCabecalho = document.querySelector('h1');
 
+//funcao que define o nome de usuario 
 function defineUserName() {
     let userName = prompt('Por favor insira seu nome');
     localStorage.setItem('nome', userName);
     meuCabecalho.textContent = `Bem-git vindo a Mozilla ${userName}`;
+    //verifica se o usuario inseriu um nome e troca o cabeçalho   
     if (!userName || userName === null) {
         defineUserName();        
     }else{
         localStorage.setItem('nome', userName)
         meuCabecalho.innerHTML = `Bem-vindo a Mozilla ${userName}`
     }
-
+    //verifica se já tinha sido inserido um nome de usuario
     if (!localStorage.getItem('nome')) {
         defineUserName();
     } else {
