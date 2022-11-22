@@ -36,7 +36,7 @@ let meuCabecalho = document.querySelector('h1');
 function defineUserName() {
     let userName = prompt('Por favor insira seu nome');
     localStorage.setItem('nome', userName);
-    meuCabecalho.textContent = `Bem-vindo a Mozilla ${userName}`;
+    meuCabecalho.textContent = `Bem-git vindo a Mozilla ${userName}`;
     if (!userName || userName === null) {
         defineUserName();        
     }else{
