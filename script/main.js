@@ -36,13 +36,22 @@ let meuCabecalho = document.querySelector('h1');
 function defineUserName() {
     let userName = prompt('Por favor insira seu nome');
     localStorage.setItem('nome', userName);
-    meuCabecalho.textContent = `Bem vindo a Mozzila ${userName}`;
+    meuCabecalho.textContent = `Bem-vindo a Mozilla ${userName}`;
+    if (!userName || userName === null) {
+        defineUserName();        
+    }else{
+        localStorage.setItem('nome', userName)
+        meuCabecalho.innerHTML = `Bem-vindo a Mozilla ${userName}`
+    }
 
     if (!localStorage.getItem('nome')) {
-        defineUserName
+        defineUserName();
     } else {
-        let savedName = localStorage.getItem('nome')
-        meuCabecalho.textContent = `Bem cindo a Mozzila ${savedName}`
+        let savedName = localStorage.getItem('nome');
+        meuCabecalho.textContent = `Bem-vindo a Mozilla ${savedName}`;
     }
     
+}
+
+meuBotao.onclick = function () { defineUserName();
 }
